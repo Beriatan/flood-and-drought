@@ -1,0 +1,13 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "891377273629.dkr.ecr.eu-west-1.amazonaws.com/flought-backend:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "5000",
+      "HostPort": "80"
+    }
+  ]
+}

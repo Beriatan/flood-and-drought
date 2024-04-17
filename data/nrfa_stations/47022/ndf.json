@@ -1,0 +1,21 @@
+{
+    "timestamp": "2024-02-28T11:38:36",
+    "interval": null,
+    "station": {
+        "id": 47022,
+        "name": "Tory Brook at Newnham Park",
+        "easting": 255154.0,
+        "northing": 57654.0,
+        "latitude": 50.40086630978923,
+        "longitude": -4.039466492727877
+    },
+    "data-type": {
+        "id": "ndf",
+        "name": "Naturalised Daily Flow",
+        "parameter": "Flow",
+        "units": "m3/s",
+        "measurement-type": "Mean",
+        "period": "P1D"
+    },
+    "data-stream": []
+}
