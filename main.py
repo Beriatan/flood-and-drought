@@ -14,7 +14,12 @@ from service.nrfa_data_service import NRFADataService
 
 app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
 load_dotenv()  # take environment variables from .env.
+
+# Apply CORS to all routes
 CORS(app)
+CORS(historical_data_controller)
+CORS(nrfa_controller)
+CORS(station_data_controller)
 
 # Register Blueprints
 app.register_blueprint(nrfa_controller)
