@@ -16,7 +16,7 @@ app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
 load_dotenv()  # take environment variables from .env.
 
 # Apply CORS to all routes
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 CORS(historical_data_controller)
 CORS(nrfa_controller)
 CORS(station_data_controller)
