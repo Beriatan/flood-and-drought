@@ -32,14 +32,14 @@ jobs:
       # Tag the Docker image with the commit SHA and latest
       - name: Tag Docker image
         run: |
-          docker tag flought-backend:latest ${{ steps.login-ecr.outputs.registry }}/flought-backend:${{ github.sha }}
-          docker tag flought-backend:latest ${{ steps.login-ecr.outputs.registry }}/flought-backend:latest
+          docker tag flought-app:latest ${{ steps.login-ecr.outputs.registry }}/flought-app:${{ github.sha }}
+          docker tag flought-app:latest ${{ steps.login-ecr.outputs.registry }}/flought-app:latest
 
       # Push both tags of the Docker image to ECR
       - name: Push Docker images to Amazon ECR
         run: |
-          docker push ${{ steps.login-ecr.outputs.registry }}/flought-backend:${{ github.sha }}
-          docker push ${{ steps.login-ecr.outputs.registry }}/flought-backend:latest
+          docker push ${{ steps.login-ecr.outputs.registry }}/flought-app:${{ github.sha }}
+          docker push ${{ steps.login-ecr.outputs.registry }}/flought-app:latest
 
       # Deploy to Elastic Beanstalk
       - name: Deploy to AWS Elastic Beanstalk
