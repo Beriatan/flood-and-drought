@@ -53,4 +53,4 @@ jobs:
           use_existing_version_if_available: true
           version_label: ${{ github.sha }}
           deployment_package: Dockerrun.aws.json
-          existing_bucket_name: elasticbeanstalk-eu-west-1-89137727362
+          existing_bucket_name: elasticbeanstalk-eu-west-1-891377273629
