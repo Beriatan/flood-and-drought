@@ -21,7 +21,7 @@ export interface MapComponentProps {
 }
 
 const Map: React.FC<MapComponentProps> = ({ stationsList }) => {
-    const { setSelectedStationId } = useContext(StationContext)
+    const { setSelectedStationGuid } = useContext(StationContext)
     return (
             <MapContainer center={position} zoom={13} style={{ height: '75vh' }}>
             <TileLayer
@@ -33,14 +33,14 @@ const Map: React.FC<MapComponentProps> = ({ stationsList }) => {
                 <Marker
                     icon={markerIcon}
                     key={stationId}
-                    position={[station.latLong.latitude, station.latLong.longitude]}
+                    position={[station.lat, station.long]}
                     eventHandlers={{
                         click: () => {
-                            setSelectedStationId(parseInt(stationId))
+                            setSelectedStationGuid(stationId)
                         }
                     }}
                 >
-                        <Popup>{station.name}</Popup>
+                    <Popup>{station.catchmentName || station.riverName || station.town || station.label}</Popup>
                 </Marker>
             ))
             }

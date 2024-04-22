@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
         <Layout>
             <Routes>
-                <Route path={'/'} element={<div>Welcome to the flood and drought prediction system</div>}/>
+                <Route path={'/'} element={<h5 className={'pt-4'}>Welcome to the flood and drought prediction system</h5>}/>
                 <Route path={'/map'} element={<MapTab />} />
             </Routes>
         </Layout>

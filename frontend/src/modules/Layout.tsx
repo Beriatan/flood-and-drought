@@ -7,9 +7,6 @@ const Layout: React.FC<{children: React.ReactNode}> = ({ children }) => {
         <>
             <Navbar />
             <main>{ children }</main>
-            {/* Uncomment and add these components as you create them */}
-            {/* <Sidebar /> */}
-            {/* <Footer /> */}
         </>
     )
 }

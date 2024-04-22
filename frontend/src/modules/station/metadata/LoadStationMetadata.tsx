@@ -1,4 +1,4 @@
-import { StationMetadata } from '../StationTypes'; // Assuming your interfaces are defined here
+import { StationMetadata } from '../StationMetadataTypes'; // Assuming your interfaces are defined here
 
 // Function to load and process the JSON data
 function loadStationData(jsonData: any): StationMetadata | null {

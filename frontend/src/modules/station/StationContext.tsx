@@ -3,8 +3,8 @@ import React from 'react';
 // Define the shape of the context's data using an interface.
 // This interface outlines the structure and expected types of the context's value.
 interface StationContextType {
-    selectedStationId: number | null; // Holds the ID of the currently selected station, or null if no station is selected.
-    setSelectedStationId: (id: number | null) => void; // Function to update the selected station ID. Accepts a number or null.
+    selectedStationGuid: string | null; // Holds the ID of the currently selected station, or null if no station is selected.
+    setSelectedStationGuid: (id: string | null) => void; // Function to update the selected station ID. Accepts a string or null.
 }
 
 // Create a context with a default value.
@@ -12,8 +12,8 @@ interface StationContextType {
 // for the context's data. This context will be used to manage and share the state of
 // the selected station ID across components that need access to it.
 const StationContext = React.createContext<StationContextType>({
-    selectedStationId: null, // Initially, no station is selected.
-    setSelectedStationId: () => {}, // Placeholder function; will be overridden by a state updater function.
+    selectedStationGuid: null, // Initially, no station is selected.
+    setSelectedStationGuid: () => {}, // Placeholder function; will be overridden by a state updater function.
 });
 
 export default StationContext;

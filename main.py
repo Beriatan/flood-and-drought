@@ -8,11 +8,12 @@ from flask_cors import CORS
 from controller.historical_data_controller import historical_data_controller
 from controller.nrfa_controller import nrfa_controller
 from controller.station_data_controller import station_data_controller
+from service.prediction_service import PredictionService
 from service.s3_storage_service import S3StorageService
 from storage.s3_client import S3Client
 from service.nrfa_data_service import NRFADataService
 
-app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
+app = Flask(__name__, static_folder='./frontend/build')
 load_dotenv()  # take environment variables from .env.
 
 # Apply CORS to all routes
@@ -34,6 +35,7 @@ with app.app_context():
     # Dependency injection for all application services
     app.config['s3_service'] = s3_service
     app.config['nrfa_service'] = NRFADataService(s3_service)
+    app.config['prediction_service'] = PredictionService()
 
 
 def configure_logging():

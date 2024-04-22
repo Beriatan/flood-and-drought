@@ -1,12 +1,14 @@
-import {LatLong} from "./StationTypes";
-
-
-export type StationsRecord = Record<number, StationPoint>
+export type StationsRecord = Record<string, StationPoint>
 
 
 export interface StationPoint {
-    id: number,
-    name: string,
-    latLong: LatLong
+    guid: string,
+    label: string,
+    lat: number,
+    long: number,
+    referenceId: string,
+    riverName?: string,
+    town?: string,
+    catchmentName?: string
 }
 

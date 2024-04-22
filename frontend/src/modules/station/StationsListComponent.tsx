@@ -3,7 +3,7 @@ import useGetStationsList from "../../hooks/useGetStationsList"
 import extractErrorMessage from "../error/ExtractErrorMessage";
 
 
-const NrfaStations: React.FC = () => {
+const StationsListComponent: React.FC = () => {
 
     // // const { stationList, error, loading } = useGetStationsList()
     // if (loading) {
@@ -26,4 +26,4 @@ const NrfaStations: React.FC = () => {
     )
 }
 
-export default NrfaStations
+export default StationsListComponent

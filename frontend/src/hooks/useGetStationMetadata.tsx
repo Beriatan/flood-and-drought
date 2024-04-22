@@ -1,18 +1,18 @@
-import { StationMetadata } from "../modules/station/StationTypes"
+import { StationMetadata } from "../modules/station/StationMetadataTypes"
 import axiosInstance from "./AxiosInstance"
 import {useQuery} from "react-query";
 
-const fetchStationMetadata = async (stationId: number): Promise<StationMetadata> => {
-    const { data } = await axiosInstance.get(`/api/v1/stations/${stationId}/metadata`)
+const fetchStationMetadata = async (guid: string): Promise<StationMetadata> => {
+    const { data } = await axiosInstance.get(`/api/v1/stations/${guid}/metadata`)
     return data
 }
 
-const useGetStationMetadata = (stationId: number ) => {
+const useGetStationMetadata = (guid: string ) => {
     const { data: stationMetadata, isLoading, error } = useQuery<StationMetadata, Error>(
-        ['stationMetadata', stationId],
-        () => fetchStationMetadata(stationId!),
+        ['stationMetadata', guid],
+        () => fetchStationMetadata(guid!),
     {
-        enabled: !!stationId
+        enabled: !!guid
         }
     )
 

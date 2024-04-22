@@ -8,7 +8,6 @@ export interface Station {
     name: string;
     "catchment-area"?: number;
     "grid-reference"?: GridReference;
-    "lat-long"?: LatLong;
     river?: string;
     location?: string;
     "station-level"?: number;

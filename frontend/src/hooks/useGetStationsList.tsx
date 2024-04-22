@@ -4,13 +4,14 @@ import {useQuery} from "react-query";
 
 function transformStationsList(data: any): StationPoint {
     return {
-        id: data.id,
-        name: data.name,
-        latLong: {
-            string: data['lat-long']?.string,
-            latitude: data['lat-long']?.latitude,
-            longitude: data['lat-long']?.longitude
-        }
+        guid: data['guid'],
+        label: data['label'],
+        referenceId: data['referenceId'],
+        riverName: data['riverName']?.string,
+        town: data['town']?.string,
+        lat: data['lat'],
+        long: data['long'],
+        catchmentName: data['catchmentName']?.string
     }
 }
 
@@ -23,7 +24,7 @@ const fetchStationsList = async (): Promise<StationsRecord> => {
 
     flatData.forEach((stationData: any) => {
         const transformedStation = transformStationsList(stationData);
-        stationsRecord[transformedStation.id] = transformedStation;
+        stationsRecord[transformedStation.guid] = transformedStation;
     });
 
     return stationsRecord;
